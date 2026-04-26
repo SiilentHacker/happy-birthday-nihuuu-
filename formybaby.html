@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>For My Queen Nihla</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri&family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            margin: 0; padding: 0;
+            background: radial-gradient(circle, #2d0b4d, #000000);
+            font-family: 'Poppins', sans-serif;
+            color: white; height: 100vh;
+            display: flex; justify-content: center; align-items: center;
+            overflow: hidden; text-align: center;
+        }
+
+        /* --- FLOATING PETALS --- */
+        .petals-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+        .petal { position: absolute; background-color: #ffb7c5; border-radius: 150% 0 150% 0; opacity: 0.6; animation: drift linear infinite; }
+        @keyframes drift { 0% { transform: translateY(-10vh) rotate(0deg); } 100% { transform: translateY(110vh) rotate(360deg); } }
+
+        /* --- BIRTHDAY CLOCK --- */
+        #timerBox { z-index: 100; width: 90%; }
+        .clock-display { font-size: 3rem; font-weight: bold; color: #ff4d6d; text-shadow: 0 0 20px #ff4d6d; margin: 15px 0; }
+        
+        /* --- LIFE COUNTER --- */
+        .life-counter {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px; border-radius: 20px;
+            margin-top: 15px; border: 1px solid rgba(255, 77, 109, 0.3);
+        }
+        .counter-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; font-size: 0.8rem; }
+        .counter-item span { display: block; font-size: 1.1rem; font-weight: bold; color: #ffb3c1; }
+
+        .gift-btn { font-size: 70px; margin-top: 15px; opacity: 0.3; filter: grayscale(1); transition: 0.5s; }
+        .active-gift { opacity: 1; filter: grayscale(0); cursor: pointer; animation: pulse 1s infinite; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+
+        /* --- MAIN CARD --- */
+        #mainCard {
+            display: none; z-index: 50; width: 88%; max-width: 390px;
+            background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(20px);
+            padding: 25px; border-radius: 30px; border: 1px solid #ff4d6d;
+            max-height: 85vh; overflow-y: auto;
+        }
+
+        .speech-box {
+            text-align: left; font-size: 0.85rem; line-height: 1.6;
+            background: rgba(255, 255, 255, 0.05); padding: 18px;
+            border-radius: 20px; white-space: pre-line; margin: 15px 0;
+            border-left: 4px solid #ff4d6d;
+        }
+
+        /* --- PROPOSAL --- */
+        #statusText { color: #ffb3c1; font-weight: 600; min-height: 45px; margin-bottom: 5px; }
+        .btn-group { display: flex; justify-content: center; gap: 20px; height: 70px; position: relative; }
+        button { padding: 12px 28px; border-radius: 50px; border: none; font-weight: 600; cursor: pointer; }
+        #yesBtn { background: #ff4d6d; color: white; }
+        #noBtn { background: #444; color: white; position: relative; }
+
+        /* --- SUCCESS PAGE (Arabic Integrated) --- */
+        #finalPage { display: none; flex-direction: column; align-items: center; z-index: 200; padding: 20px; }
+        .arabic { font-family: 'Amiri', serif; font-size: 1.8rem; color: #ffb3c1; margin: 15px 0; line-height: 1.4; }
+        .romantic { font-family: 'Dancing Script', cursive; color: #ff4d6d; }
+    </style>
+</head>
+<body>
+
+<div class="petals-container" id="petalContainer"></div>
+
+<div id="timerBox">
+    <h2 class="romantic">Countdown to May 05...</h2>
+    <div class="clock-display" id="birthdayClock">00:00:00</div>
+    
+    <div class="life-counter">
+        <p style="margin: 0 0 10px 0; font-size: 0.85rem;">Nihla has blessed this world for:</p>
+        <div class="counter-grid">
+            <div class="counter-item"><span id="years">0</span>Years</div>
+            <div class="counter-item"><span id="days">0</span>Days</div>
+            <div class="counter-item"><span id="hours">0</span>Hours</div>
+            <div class="counter-item"><span id="mins">0</span>Mins</div>
+            <div class="counter-item"><span id="secs">0</span>Secs</div>
+        </div>
+    </div>
+
+    <div id="bigGift" class="gift-btn">🔒</div>
+    <p id="hint" style="color: #ffb3c1; margin-top: 10px;">Unlocks at Midnight 🌙</p>
+</div>
+
+<div id="mainCard">
+    <h1 class="romantic" style="font-size: 2.2rem;">Happy Birthday Nihla! 🎂</h1>
+    <div class="speech-box">
+Happy birthday nihuu 🎂🥺
+
+dear love 
+May mash er ei misty rod er moto apner jibon ta jeno sob smy ujjol takhe 🤲🏻...amdr ek shate katano protita moment amr kache sriti hoiye takhbe 😊....ebabhei sharajibon pashe chai apnk priotoma....🫂 dua kori sob smy kushi takho amr shate 😊...amdr karor nojor na laguk🥹 ...agiye jw kw takuk na takuk , ami sob smy tmr pashe dal hoiye darabo🤗
+
+Kkno Jodi bhul kori maaf kore diyen ....Ami apnk haraite chai na prio 😭.....Dua Kori sob smy kushi takhen ...Allah amdr 2jon k 2jon er jno kobul koruk (Ameen) 🤲🏻
+
+Sorry beshi romantic hower jno ...ki korbo Ami apner kache ashlei erkm hoi Jai 🥲🥲....plz amk eghular jno Mon teke utai diyen na ...Ami parbo na nije k shamlaite ....😭
+
+Apner babu Apnk ja promise korse sob korbe inshaallah shudu ektu pashe takhiyen amr ....Ami kibabe bolle apni bishash korben Jani na ...amr pgl apner jno .....🤲🏻
+
+Ei bishaal Akash poriman valobashi apnk 💗...Jani na apner jno ki korte parbo life a kintu eituk e bolte parbo apner ei pgl ta apnr shate kkno cheat korbe ...jkn teke apni amk shujug diyechen nijek apner jno toiri korchi 🤗
+
+Ami Jani na Ami apner mone kotuk jaiga niye achi kintu bishash koren amr Pura Mon jure shudu apni ...💖....thank you amr life a ashar jno ...Ami nijek onk lucky mne korbo apnk amr soulmate hishebe nijer kore nite parle 😌☺️
+
+Happy birthday nihuuuu 😘
+I love you baby 💖
+    </div>
+    <h2 class="romantic">Will you marry me, Nihla?</h2>
+    <div id="statusText"></div>
+    <div class="btn-group">
+        <button id="yesBtn" onclick="finish()">Yes</button>
+        <button id="noBtn" onmouseover="dodge()" ontouchstart="dodge()">No</button>
+    </div>
+</div>
+
+<div id="finalPage">
+    <h1 class="romantic" style="font-size: 3rem;">I love you baby 💖</h1>
+    
+    <div class="arabic">
+        جمعنا الله في الدنيا والآخرة... إن شاء الله
+    </div>
+    
+    <p style="font-size: 1.1rem; line-height: 1.6; padding: 0 10px;">
+        May Allah keep us together, <br>
+        fi dunya wal akhirah... Inshaallah.
+    </p>
+
+    <div style="font-size: 50px; margin-top: 20px;">🌹✨💍</div>
+    <h2 class="romantic" style="font-size: 2.5rem; margin-top: 20px;">Imran 💖 Nihla</h2>
+</div>
+
+<script>
+    const birthDate = new Date("2006-05-05T00:00:00");
+    const targetDate = new Date("2026-05-05T00:00:00");
+
+    function update() {
+        const now = new Date();
+        
+        // Life Counter
+        const diffLife = now - birthDate;
+        document.getElementById('years').innerText = Math.floor(diffLife / (1000 * 3600 * 24 * 365.25));
+        document.getElementById('days').innerText = Math.floor(diffLife / (1000 * 3600 * 24));
+        document.getElementById('hours').innerText = Math.floor(diffLife / (1000 * 3600));
+        document.getElementById('mins').innerText = Math.floor(diffLife / (1000 * 60));
+        document.getElementById('secs').innerText = Math.floor(diffLife / 1000);
+
+        // Target Clock
+        const diffTarget = targetDate - now;
+        if (diffTarget > 0) {
+            const h = Math.floor(diffTarget / 3600000);
+            const m = Math.floor((diffTarget % 3600000) / 60000);
+            const s = Math.floor((diffTarget % 60000) / 1000);
+            document.getElementById('birthdayClock').innerText = 
+                `${h < 10 ? '0' : ''}${h}:${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+        } else {
+            document.getElementById('birthdayClock').innerText = "BIRTHDAY TIME!";
+            const g = document.getElementById('bigGift');
+            g.innerHTML = "🎁";
+            g.classList.add('active-gift');
+            g.onclick = () => {
+                document.getElementById('timerBox').style.display = 'none';
+                document.getElementById('mainCard').style.display = 'block';
+            };
+        }
+    }
+    setInterval(update, 1000);
+
+    // FLOWERS
+    function createPetals() {
+        const container = document.getElementById('petalContainer');
+        setInterval(() => {
+            const p = document.createElement('div');
+            p.className = 'petal';
+            const size = Math.random() * 10 + 10;
+            p.style.width = size + 'px'; p.style.height = size + 'px';
+            p.style.left = Math.random() * 100 + 'vw';
+            p.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            container.appendChild(p);
+            setTimeout(() => p.remove(), 8000);
+        }, 400);
+    }
+    createPetals();
+
+    // NO BUTTON
+    const lines = [
+        "do you love me ? 🥺",
+        "please think again!!! 🥹",
+        "ar ekbar chinta koro plzzz 😭",
+        "Baby Yes bolo na , ato dong koro kn 😩",
+        "ice cream khawabo 🤞🏻🍦"
+    ];
+    let idx = 0;
+    function dodge() {
+        const btn = document.getElementById('noBtn');
+        document.getElementById('statusText').innerText = lines[idx];
+        idx = (idx + 1) % lines.length;
+        btn.style.transform = `translate(${Math.random()*80-40}px, ${Math.random()*80-40}px)`;
+    }
+
+    function finish() {
+        document.getElementById('mainCard').style.display = 'none';
+        document.getElementById('finalPage').style.display = 'flex';
+        // Success Burst
+        setInterval(() => {
+            const p = document.createElement('div');
+            p.className = 'petal'; p.style.backgroundColor = '#ff4d6d';
+            p.style.left = Math.random() * 100 + 'vw';
+            document.body.appendChild(p);
+        }, 100);
+    }
+</script>
+</body>
+</html>
